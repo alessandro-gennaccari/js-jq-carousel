@@ -24,6 +24,7 @@
     display: none;
     height: 100%;
     box-shadow: 0 0 5px 2px #001c33;
+    border-radius: 10px;
 }
 .slider-wrapper .images img.active {
     display: inline-block;
