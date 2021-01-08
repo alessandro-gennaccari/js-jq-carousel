@@ -7,7 +7,7 @@ $(document).ready(function(){
   $(document).keydown(function(e){
     switch(e.which){
       // Quando si utilizza ArrowLeft
-      case 37:	goPrev();
+      case 37:  goPrev();
       break;	
       // Quando si utilizza ArrowRight
       case 39:	goNext();
@@ -58,21 +58,11 @@ function circleNav() {
     $('div.nav i.active').removeClass('active');
     $(this).addClass('active');
 
-    if ($('div.nav i').eq(0).hasClass('active')){
+    var index = $(this).index()
+
+    if ($('div.nav i').eq(index).hasClass('active')){
       $('div.images img.active').removeClass('active');
-      $('div.images img').eq(0).addClass('active');
-    }
-    else if ($('div.nav i').eq(1).hasClass('active')){
-      $('div.images img.active').removeClass('active');
-      $('div.images img').eq(1).addClass('active');
-    }
-    else if ($('div.nav i').eq(2).hasClass('active')){
-      $('div.images img.active').removeClass('active');
-      $('div.images img').eq(2).addClass('active');
-    }
-    else if ($('div.nav i').eq(3).hasClass('active')){
-      $('div.images img.active').removeClass('active');
-      $('div.images img').eq(3).addClass('active');
+      $('div.images img').eq(index).addClass('active');
     }
 
 }
