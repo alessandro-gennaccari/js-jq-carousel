@@ -2,6 +2,7 @@ $(document).ready(function(){
 
   $('div.next i').click(goNext);
   $('div.prev i').click(goPrev);
+  $('div.nav i').click(circleNav);
 
 });
 
@@ -38,5 +39,29 @@ function goPrev() {
     $('div.images img.last').addClass('active');
     $('div.nav i.last').addClass('active');
   }
+
+}
+
+function circleNav() {
+
+    $('div.nav i.active').removeClass('active');
+    $(this).addClass('active');
+
+    if ($('div.nav i').eq(0).hasClass('active')){
+      $('div.images img.active').removeClass('active');
+      $('div.images img').eq(0).addClass('active');
+    }
+    else if ($('div.nav i').eq(1).hasClass('active')){
+      $('div.images img.active').removeClass('active');
+      $('div.images img').eq(1).addClass('active');
+    }
+    else if ($('div.nav i').eq(2).hasClass('active')){
+      $('div.images img.active').removeClass('active');
+      $('div.images img').eq(2).addClass('active');
+    }
+    else if ($('div.nav i').eq(3).hasClass('active')){
+      $('div.images img.active').removeClass('active');
+      $('div.images img').eq(3).addClass('active');
+    }
 
 }
