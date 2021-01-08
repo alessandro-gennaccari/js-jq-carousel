@@ -7,42 +7,45 @@ $(document).ready(function(){
 
 });
 
+// Funzione img successiva
 function goNext() {
 
   var imgActive = $('div.images img.active');
   var circleActive = $('div.nav i.active')
 
   imgActive.removeClass('active');
-  imgActive.next().addClass('active');
-
   circleActive.removeClass('active');
-  circleActive.next().addClass('active');
 
-  if (imgActive.hasClass('last')){
+  if (imgActive.hasClass('last') && circleActive.hasClass('last')){
     $('div.images img.first').addClass('active');
     $('div.nav i.first').addClass('active');
+  }else {
+    imgActive.next().addClass('active');
+    circleActive.next().addClass('active');
   }
 
 }
 
+// Funzione img precedente
 function goPrev() {
 
   var imgActive = $('div.images img.active');
   var circleActive = $('div.nav i.active')
 
   imgActive.removeClass('active');
-  imgActive.prev().addClass('active');
-
   circleActive.removeClass('active');
-  circleActive.prev().addClass('active');
 
-  if (imgActive.hasClass('first')){
+  if (imgActive.hasClass('first') && circleActive.hasClass('first')){
     $('div.images img.last').addClass('active');
     $('div.nav i.last').addClass('active');
+  }else {
+    imgActive.prev().addClass('active');
+    circleActive.prev().addClass('active');
   }
 
 }
 
+// Funzione scelta img con pallino
 function circleNav() {
 
     $('div.nav i.active').removeClass('active');
@@ -57,7 +60,9 @@ function circleNav() {
 
 }
 
+// Funzione click con tastiera
 function arrowKey(e){
+
   switch(e.which){
     // Quando si utilizza ArrowLeft
     case 37:  goPrev();
@@ -66,4 +71,5 @@ function arrowKey(e){
     case 39:	goNext();
     break;
   }
+
 }
