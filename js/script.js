@@ -4,6 +4,17 @@ $(document).ready(function(){
   $('div.prev i').click(goPrev);
   $('div.nav i').click(circleNav);
 
+  $(document).keydown(function(e){
+    switch(e.which){
+      // Quando si utilizza ArrowLeft
+      case 37:	goPrev();
+      break;	
+      // Quando si utilizza ArrowRight
+      case 39:	goNext();
+      break;
+    }
+  });
+
 });
 
 function goNext() {
