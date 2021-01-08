@@ -23,6 +23,7 @@
 .slider-wrapper .images img {
     display: none;
     height: 100%;
+    box-shadow: 0 0 5px 2px #001c33;
 }
 .slider-wrapper .images img.active {
     display: inline-block;
@@ -35,7 +36,7 @@
     transform: translateY(-50%);
     font-size: 60px;
     cursor: pointer;
-    color: cornflowerblue;
+    color: #0187f1;
 }
 .next {
     left: auto;
@@ -56,5 +57,5 @@
     cursor: pointer;
 }
 .nav > i.active {
-    color: rgb(84, 129, 211);
+    color: #0187f1;
 }
