@@ -3,17 +3,7 @@ $(document).ready(function(){
   $('div.next i').click(goNext);
   $('div.prev i').click(goPrev);
   $('div.nav i').click(circleNav);
-
-  $(document).keydown(function(e){
-    switch(e.which){
-      // Quando si utilizza ArrowLeft
-      case 37:  goPrev();
-      break;	
-      // Quando si utilizza ArrowRight
-      case 39:	goNext();
-      break;
-    }
-  });
+  $(document).keydown(arrowKey);
 
 });
 
@@ -65,4 +55,15 @@ function circleNav() {
       $('div.images img').eq(index).addClass('active');
     }
 
+}
+
+function arrowKey(e){
+  switch(e.which){
+    // Quando si utilizza ArrowLeft
+    case 37:  goPrev();
+    break;	
+    // Quando si utilizza ArrowRight
+    case 39:	goNext();
+    break;
+  }
 }
